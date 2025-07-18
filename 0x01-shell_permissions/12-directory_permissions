@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~
+mkdir my_dir && chmod 751 my_dir && ls -ld my_dir | awk '{print $1}'
