@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir my_dir && chmod 751 my_dir && ls -ld my_dir | awk '{print $1}'
+install -m 751 -d my_dir
