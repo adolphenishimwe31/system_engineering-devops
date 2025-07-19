@@ -1,2 +1,3 @@
 #!/bin/bash
-export PATH="/my/custom/path:$PATH"
+export PATH="$PATH:/action"
+
