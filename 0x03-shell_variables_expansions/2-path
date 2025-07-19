@@ -1,0 +1,2 @@
+#!/bin/bash
+export PATH="/my/custom/path:$PATH"
