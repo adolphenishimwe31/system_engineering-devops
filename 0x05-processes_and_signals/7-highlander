@@ -1,39 +1,15 @@
 #!/usr/bin/env bash
 #
-# 7-highlander: prints "To infinity and beyond" every 2 seconds indefinitely,
-# and prints "I am invincible!!!" + "OK" when receiving SIGTERM, but continues running.
-#
-# 67-stop_me_if_you_can: when run with argument "stop", it sends SIGTERM to
-# 7-highlander process WITHOUT using kill or killall commands.
+# Prints "To infinity and beyond" every 2 seconds indefinitely.
+# On SIGTERM, prints "OK" and continues running.
 
 trap_handler() {
-  echo "I am invincible!!!"
   echo OK
 }
 
-highlander_loop() {
-  trap 'trap_handler' SIGTERM
-  while true; do
-    echo "To infinity and beyond"
-    sleep 2
-  done
-}
+trap 'trap_handler' SIGTERM
 
-stop_highlander() {
-  pid=$(pgrep -f "7-highlander_combined run")
-  if [[ -n "$pid" ]]; then
-    perl -e "kill 15, $pid"
-  fi
-}
-
-case "$1" in
-  run)
-    highlander_loop
-    ;;
-  stop)
-    stop_highlander
-    ;;
-  *)
-    echo "Usage: $0 {run|stop}"
-    ;;
-esac
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
+done
