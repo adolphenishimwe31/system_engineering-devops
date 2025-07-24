@@ -2,8 +2,8 @@
 
 # Display a human-readable, hierarchical list of all running processes
 
-# Print header
+# Print header line
 echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
 
-# Show all processes in a tree structure with user-friendly info
+# Display all processes with hierarchy, including background processes
 ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,cmd --forest --sort=ppid
