@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# Stops the 4-to_infinity_and_beyond process without using kill or killall commands
+
+# shellcheck disable=SC2009
+pid=$(ps aux | grep '[4]-to_infinity_and_beyond' | grep -v grep | awk '{print $2}')
+
+if [[ -n "$pid" ]]; then
+  # Use perl to send SIGTERM to the process
+  perl -e "kill 15, $pid"
+fi
