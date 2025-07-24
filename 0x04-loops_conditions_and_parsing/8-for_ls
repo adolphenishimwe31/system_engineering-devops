@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-# This script lists the contents of the current directory, showing only the part after the first dash
+# Display files in current directory, showing part after first dash if any
 
 for item in *; do
-  if [[ "$item" == *-* ]]; then
-    echo "${item#*-}"
+  if [[ -f "$item" || -d "$item" ]]; then
+    if [[ "$item" == *-* ]]; then
+      echo "${item#*-}"
+    else
+      echo "$item"
+    fi
   fi
 done
