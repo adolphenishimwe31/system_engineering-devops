@@ -1,11 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# This script lists non-hidden files, showing only part after the first dash
 
-# Loop through all non-hidden files and directories in the current directory
 for item in *; do
-  # Skip if it's a hidden file or doesn't contain a dash
   if [[ "$item" != .* && "$item" == *-* ]]; then
-    # Extract the part after the first dash (-)
     echo "${item#*-}"
   fi
 done
-
