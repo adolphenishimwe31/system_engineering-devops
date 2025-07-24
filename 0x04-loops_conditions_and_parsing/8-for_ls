@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# This script lists non-hidden files, showing only part after the first dash
+# This script lists non-hidden files, replacing the first dash with an underscore
 
 for item in *; do
-  if [[ "$item" != .* && "$item" == *-* ]]; then
-    echo "${item#*-}"
+  if [[ "$item" != .* ]]; then
+    echo "${item/-/_}"
   fi
 done
