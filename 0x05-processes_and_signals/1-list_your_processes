@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
-
-# Display a human-readable, hierarchical list of all running processes
-
-# Print header line
 echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
-
-# Display all processes with hierarchy, including background processes
 ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,cmd --forest --sort=ppid
