@@ -1,8 +1,5 @@
-#!/usr/bin/env bash
-# This script lists non-hidden files, replacing the first dash with an underscore
+Task: Write a Bash script that displays:
 
-for item in *; do
-  if [[ "$item" != .* ]]; then
-    echo "${item/-/_}"
-  fi
-done
+The content of the current directory.
+In a list format (one item per line).
+Where only the part of the name after the first dash (-) is displayed (refer to the example for clarity).
