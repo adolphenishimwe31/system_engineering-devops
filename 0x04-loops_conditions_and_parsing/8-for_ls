@@ -1,5 +1,8 @@
-Task: Write a Bash script that displays:
+#!/usr/bin/env bash
+# This script lists the contents of the current directory, showing only the part after the first dash
 
-The content of the current directory.
-In a list format (one item per line).
-Where only the part of the name after the first dash (-) is displayed (refer to the example for clarity).
+for item in *; do
+  if [[ "$item" == *-* ]]; then
+    echo "${item#*-}"
+  fi
+done
