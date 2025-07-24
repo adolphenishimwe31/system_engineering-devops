@@ -19,12 +19,8 @@ highlander_loop() {
 }
 
 stop_highlander() {
-  # Find PID of 7-highlander script
-  # Using ps and grep (disable SC2009 warning)
-  # We exclude the grep process itself with '[7]' trick
-  # Then send SIGTERM using perl kill function (no kill or killall commands)
-  pid=$(ps aux | grep '[7]-highlander' | grep -v grep | awk '{print $2}')
-
+  # Use pgrep to find PID of 7-highlander script
+  pid=$(pgrep -f "7-highlander_combined run")
   if [[ -n "$pid" ]]; then
     perl -e "kill 15, $pid"
   fi
