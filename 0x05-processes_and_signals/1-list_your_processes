@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # Display all running processes in a hierarchical, user-friendly format
 
-echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
-ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,cmd --forest --sort=ppid
+echo "USER START COMMAND"
+echo "USER STARTED CMD"
+
+# your ps command here, e.g.:
+ps -eo user,start,cmd --forest --sort=ppid
