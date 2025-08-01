@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script that handles SIGTERM signal gracefully
 
-# Trap SIGTERM signal and output "OK"
+# Trap SIGTERM signal and output exactly "OK"
 trap "echo OK" SIGTERM
 
 # Simulate a long-running process with periodic output
