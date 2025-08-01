@@ -1,15 +1,8 @@
 #!/usr/bin/env bash
-#
-# Prints "To infinity and beyond" every 2 seconds indefinitely.
-# On SIGTERM, prints "OK" and continues running.
-
-trap_handler() {
-  echo OK
-}
-
-trap 'trap_handler' SIGTERM
-
-while true; do
+# Script that handles SIGTERM signal gracefully
+trap "echo I am invincible!!!" SIGTERM
+while true
+do
   echo "To infinity and beyond"
   sleep 2
 done
