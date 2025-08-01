@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# Script that handles SIGTERM signal gracefully
-trap "echo I am invincible!!!" SIGTERM
-while true
-do
+# This script prints "To infinity and beyond" every 2 seconds
+# and overrides SIGTERM to print "I am invincible!!!"
+
+trap 'echo "I am invincible!!!"' SIGTERM
+
+while true; do
   echo "To infinity and beyond"
   sleep 2
 done
