@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 # Script that handles SIGTERM signal gracefully
-
-# Trap SIGTERM signal and output exactly "OK"
-trap "echo OK" SIGTERM
-
-# Simulate a long-running process with periodic output
+trap "echo I am invincible!!!" SIGTERM
 while true
 do
   echo "To infinity and beyond"
